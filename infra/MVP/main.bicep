@@ -3,11 +3,11 @@ param sqlAdminUser string = 'cdmadmin'
 @secure()
 param sqlAdminPassword string
 
-var storageAccountName = 'cdmstorage${uniqueString(resourceGroup().id)}'
-var sqlServerName = 'cdmsql${uniqueString(resourceGroup().id)}'
-var functionAppName = 'cdmfunction${uniqueString(resourceGroup().id)}'
-var appServicePlanName = 'cdmAppPlan'
-var webAppName = 'cdmwebapp${uniqueString(resourceGroup().id)}'
+var storageAccountName = 'statheryncdmcore${uniqueString(resourceGroup().id)}'
+var sqlServerName = 'sql-atheryn-cdm-core-${uniqueString(resourceGroup().id)}'
+var functionAppName = 'func-atheryn-cdm-core-${uniqueString(resourceGroup().id)}'
+var appServicePlanName = 'asp-atheryn-cdm-core'
+var webAppName = 'app-atheryn-cdm-core-${uniqueString(resourceGroup().id)}'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   name: storageAccountName
@@ -22,7 +22,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 }
 
 resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
-  name: 'cdm-insights'
+  name: 'appi-atheryn-cdm-core'
   location: location
   kind: 'web'
   properties: {
@@ -116,7 +116,7 @@ resource webApp 'Microsoft.Web/sites@2022-09-01' = {
 }
 
 resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
-  name: 'cdm-kv-${uniqueString(resourceGroup().id)}'
+  name: 'kv-atheryn-cdm-core-${uniqueString(resourceGroup().id)}'
   location: location
   properties: {
     tenantId: subscription().tenantId
@@ -131,7 +131,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
 }
 
 resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
-  name: 'cdm-logs'
+  name: 'law-atheryn-cdm-core'
   location: location
   properties: {
     sku: {

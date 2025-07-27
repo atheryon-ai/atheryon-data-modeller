@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Deployment settings
-RESOURCE_GROUP="rg-atheryon-data-modeller-prod"
+RESOURCE_GROUP="rg-atheryon-cdm-core-prod-aue"
 LOCATION="australiaeast"
 SQL_ADMIN_USER="cdmadmin"
 
