@@ -1,0 +1,24 @@
+name: Trade Query Agent
+description: >
+  A financial domain agent grounded on ISDA CDM. It helps users query canonical trade data using natural language.
+version: 0.1.0
+system_prompt_file: agent_prompt.md
+
+grounding:
+  files:
+    - ../canonical_store/trades/trade_cdm.json  # or directory if multiple
+  schema_file: schema/cdm-schema.yaml
+
+tools:
+  - name: search_trades_by_field
+    description: Search trades by matching a Party or Trade field to a specific value.
+    inputs:
+      - name: field
+        type: string
+      - name: value
+        type: string
+    output:
+      type: json
+    endpoint:
+      url: http://localhost:5000/api/search  # Replace with your deployed URL if hosted
+      method: POST

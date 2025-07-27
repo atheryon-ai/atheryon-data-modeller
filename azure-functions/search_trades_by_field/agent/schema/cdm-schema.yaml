@@ -1,0 +1,21 @@
+Trade:
+  - trade_id
+  - trade_reference
+  - trade_date
+  - status
+  - booking_location
+  - counterparty_id
+  - product_id
+
+Party:
+  - party_id
+  - legal_entity_name
+  - identifier
+  - role
+
+Product:
+  - product_id
+  - product_type
+  - currency
+  - notional
+  - maturity_date
