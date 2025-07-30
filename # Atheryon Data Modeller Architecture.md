@@ -173,7 +173,8 @@ graph TB
 
 This diagram shows the complete architecture for the **Atheryon Data Modeller** project - an MXML to ISDA CDM Transformation Platform that includes:
 
-### Key Components:
+### Key Components
+
 - **MXML to CDM Transformer**: Python-based engine for converting legacy MXML trade files to standardized ISDA CDM format
 - **Azure Functions**: Serverless compute for trade search operations with AI-powered agent capabilities
 - **Flask Web Interface**: User-friendly web application for trade data exploration and transformation
@@ -182,13 +183,15 @@ This diagram shows the complete architecture for the **Atheryon Data Modeller** 
 - **Canonical Trade Store**: Standardized CDM JSON records with complete audit trail
 - **Testing Infrastructure**: Comprehensive validation for transformation accuracy and agent functionality
 
-### Code Repository Structure:
+### Code Repository Structure
+
 - **atheryon-data-modeller**: Main platform with transformation engines, Azure Functions, and web interface
 - **rosetta-dsl**: ISDA CDM code generation toolkit with multi-language support
 - **infrastructure-bicep**: Azure resource provisioning with Infrastructure as Code
 - **configuration**: Application settings, environment variables, and deployment configurations
 
-### Data Flow:
+### Data Flow
+
 1. **Data Ingestion**: Legacy MXML trade files imported from trading systems
 2. **Transformation Pipeline**: Python engine converts MXML to standardized CDM JSON format
 3. **Canonical Storage**: Transformed trades stored in both SQL Server and Azure Storage
@@ -196,13 +199,15 @@ This diagram shows the complete architecture for the **Atheryon Data Modeller** 
 5. **Multi-Channel Access**: Web interface, REST API, and Azure Functions provide flexible access
 6. **Code Generation**: Rosetta DSL generates implementation code for various platforms
 
-### Security Model:
+### Security Model
+
 - **Managed Identity**: Zero-secret authentication across all Azure services
 - **Key Vault Integration**: Secure storage for connection strings and API keys
 - **Role-Based Access**: Fine-grained permissions for different user types
 - **Audit Trail**: Complete logging of all transformation and access operations
 
-### CDM-Specific Features:
+### CDM-Specific Features
+
 - **ISDA Compliance**: Full adherence to Common Domain Model standards
 - **Multi-Entity Support**: Party, Product, and Trade entity management
 - **Data Validation**: Schema validation ensuring CDM compliance
@@ -210,7 +215,8 @@ This diagram shows the complete architecture for the **Atheryon Data Modeller** 
 - **Regulatory Ready**: Supports compliance reporting requirements
 - **Version Management**: Tracks CDM schema versions and migration paths
 
-### Business Value:
+### Business Value
+
 - **Data Standardization**: Converts proprietary formats to industry standards
 - **Operational Efficiency**: Automated transformation reduces manual effort
 - **Regulatory Compliance**: Ensures adherence to financial industry standards

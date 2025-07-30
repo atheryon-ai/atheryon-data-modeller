@@ -1,17 +1,21 @@
 # Atheryon Data Modeller - Project Analysis
 
 ## 📅 Last Activity Summary
+
 - **Most Recent Use:** July 27, 2025 (today) - deployment script updated during project renaming
 - **Last Development Activity:** July 3, 2025 (24 days ago) - Java CDM service components modified
 - **Project Status:** Active but dormant development
 
 ## 🏗️ Project Overview
+
 A comprehensive **financial data transformation system** that converts MXML (Market Data XML) trade data into ISDA Common Domain Model (CDM) format, featuring Azure cloud infrastructure and AI-powered search capabilities.
 
 ## 🔧 Core Components
 
 ### 1. Data Transformation Engine
+
 **Location:** `transform/mxml_to_cdm.py`
+
 - **Purpose:** Converts MXML trade files to standardized CDM JSON format
 - **Features:**
   - XML parsing with namespace support
@@ -21,7 +25,9 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 - **Output:** Structured CDM JSON with Party, Product, and Trade objects
 
 ### 2. Azure Function Apps
+
 **Location:** `azure-functions/`
+
 - **Search Function:** `search_trades_by_field/`
   - AI-powered trade search capabilities
   - Agent-based query processing with manifest configuration
@@ -31,7 +37,9 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 - **Triggers:** HTTP-triggered trade field searches
 
 ### 3. Java CDM Service
+
 **Location:** `cdm-service/`
+
 - **Framework:** Spring Boot application
 - **Components:**
   - `CdmController.java` - REST API endpoints for CDM operations
@@ -40,12 +48,15 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 - **Purpose:** Provides RESTful API for CDM data access and manipulation
 
 ### 4. Azure Infrastructure (Infrastructure as Code)
+
 **Location:** `infra/MVP/main.bicep`
+
 - **Deployment:** Bicep template with automated deployment script
 - **Resource Group:** `rg-atheryon-data-modeller-prod` (updated naming)
 - **Location:** Australia East
 
 #### Azure Resources Created:
+
 | Resource Type | Name Pattern | Purpose |
 |---------------|-------------|---------|
 | Storage Account | `cdmstorage{uniqueString}` | File storage and function app storage |
@@ -58,7 +69,9 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 | App Service Plan | `cdmAppPlan` | Hosting plan for web components |
 
 ### 5. Data Storage & Examples
+
 **Canonical Store:** `canonical_store/trades/`
+
 - **Format:** Standardized CDM JSON trade records
 - **Example Data:** Interest Rate Swap trade with complete entity structure:
   ```json
@@ -70,10 +83,13 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
   ```
 
 **Sample Data:** `sample_data/sample_trade.mxml`
+
 - Test MXML files for transformation validation
 
 ### 6. Web Interface
+
 **Location:** `webapp/`
+
 - **Framework:** Flask web application
 - **Features:**
   - Trade search interface with field-based queries
@@ -82,7 +98,9 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 - **Endpoints:** GET/POST methods for search operations
 
 ### 7. Rosetta DSL Integration
+
 **Location:** `rosetta-dsl/`
+
 - **Purpose:** ISDA CDM code generation and compliance
 - **Supported Languages:**
   - DAML - Smart contract language
@@ -99,12 +117,14 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 ## 🎯 Business Purpose & Value
 
 ### Primary Objectives
+
 1. **Data Standardization:** Convert proprietary MXML trade formats to industry-standard ISDA CDM
 2. **Search & Discovery:** Provide AI-powered querying capabilities for trade data
 3. **Cloud Architecture:** Deploy scalable, serverless infrastructure on Azure
 4. **Regulatory Compliance:** Ensure adherence to ISDA CDM standards for financial reporting
 
 ### Key Benefits
+
 - **Interoperability:** Enables data exchange between financial institutions using common standards
 - **Automation:** Reduces manual data transformation efforts
 - **Scalability:** Cloud-native architecture supports enterprise-scale processing
@@ -114,6 +134,7 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 ## 🏷️ Technical Architecture
 
 ### Data Flow
+
 1. **Input:** MXML trade files from legacy systems
 2. **Transformation:** Python-based converter processes XML to CDM JSON
 3. **Storage:** Canonical store maintains standardized trade records
@@ -122,6 +143,7 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 6. **Interface:** Flask web app provides user-friendly access
 
 ### Integration Points
+
 - **Azure Services:** Functions, Storage, SQL, Key Vault, Monitoring
 - **ISDA CDM:** Full compliance with Common Domain Model standards
 - **Multi-Language Support:** Rosetta DSL generators for various platforms
@@ -130,6 +152,7 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 ## 📊 Current Status Assessment
 
 ### ✅ Strengths
+
 - Comprehensive infrastructure-as-code implementation
 - Multi-language code generation capabilities
 - Complete Azure cloud integration
@@ -137,12 +160,14 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 - AI-powered search functionality
 
 ### ⚠️ Considerations
+
 - **Development Activity:** Dormant for 24 days (last Java service updates July 3)
 - **Git Repository:** Not version controlled (no .git repository)
 - **Testing:** Limited test coverage visible in current structure
 - **Documentation:** Missing comprehensive API documentation
 
 ### 🚀 Potential Use Cases
+
 1. **Financial Institution Data Migration:** Convert legacy trade systems to CDM
 2. **Regulatory Reporting:** Standardize trade data for compliance reporting
 3. **Cross-Institution Integration:** Enable standardized data exchange
@@ -151,12 +176,14 @@ A comprehensive **financial data transformation system** that converts MXML (Mar
 ## 📈 Recommendations
 
 ### Immediate Actions
+
 1. **Initialize Git Repository:** Add version control for development tracking
 2. **Update Documentation:** Create comprehensive API and deployment guides
 3. **Testing Framework:** Implement unit and integration tests
 4. **Security Review:** Audit Key Vault configurations and access policies
 
 ### Future Enhancements
+
 1. **CI/CD Pipeline:** Automated testing and deployment workflows
 2. **Performance Optimization:** Scale testing and performance tuning
 3. **API Documentation:** OpenAPI/Swagger documentation generation
