@@ -1,7 +1,0 @@
-black
-pytest
-mypy
-isort
-flake8
-pre-commit
-coverage
