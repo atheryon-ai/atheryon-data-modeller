@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-The Atheryon Data Modeller is an MXML to ISDA CDM (Common Domain Model) transformation platform that consists of multiple integrated components:
+The Atheryon Data Modeller is an MXML to ISDA CDM (Common Domain Model) transformation platform located within the `atheryon-projects/` workspace. It consists of multiple integrated components and uses the clean FINOS CDM dependency at `../../finos-cdm/` for CDM compliance:
 
 ### Core Architecture
 - **Python Transformation Engine** (`/transform/mxml_to_cdm.py`): Converts legacy MXML trade files to standardized ISDA CDM format
@@ -67,6 +67,7 @@ pip install -r "requirements 2.txt"
 - `azure-functions/search_trades_by_field/`: AI-powered trade search agent
 - `canonical_store/trades/`: CDM JSON storage location
 - `sample_data/`: Test MXML files for development
+- `../../finos-cdm/`: Clean FINOS CDM dependency (separate from custom code)
 
 ### Architecture Documentation
 - `# Atheryon Data Modeller Architecture.md`: Comprehensive system architecture diagram
@@ -88,8 +89,9 @@ pip install -r "requirements 2.txt"
 
 ## ISDA CDM Integration
 
-This project implements ISDA Common Domain Model standards:
+This project implements ISDA Common Domain Model standards via the clean FINOS CDM dependency:
 - CDM objects represent standardized financial instruments
-- Transformation ensures regulatory compliance
+- Transformation ensures regulatory compliance using FINOS CDM at `../../finos-cdm/`
 - Multi-language code generation supports various platforms
 - Full lifecycle event management from trade execution to termination
+- Clean separation between vendor CDM code and custom transformation logic
